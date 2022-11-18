@@ -1,4 +1,4 @@
-function pow(x, n){
+function pow(x, n){ //возвращает x в степени n
     var p;
     p = document.getElementById('pow');
     if (n >= 0){
@@ -12,27 +12,22 @@ function pow(x, n){
     
 }
 
-function gsd(a, b){
+function nod(a, b) {//наибольший общий делитель двух неотрицательных чисел  a и  b 
     var p;
-    p = document.getElementById('gsd');
-    i = 1;
-    result = 1;
-    if (a < b){
-        c = a;
-        a = b;
-        b = c;
+    p = document.getElementById('nod');
+    if ((typeof a !== 'number') || (typeof b !== 'number'))
+        return false;
+    a = Math.abs(a);
+    b = Math.abs(b);
+    while(b) {
+        var t = b;
+        b = a % b;
+        a = t;
     }
-    while (i <= b){
-        if (a % i != 0 || b % i != 0){
-            break
-        }
-        if (a % i == 0 && b % i == 0){result = i;}
-        i++;
-    }
-    p.innerHTML += result;
+    p.innerHTML += a;
 }
 
-function minDigit(x){
+function minDigit(x){ //возвращает наименьшую цифру целого неотрицательного числа x 
     var p;
     p = document.getElementById('minDigit');
     min = x % 10;
@@ -45,18 +40,18 @@ function minDigit(x){
     p.innerHTML += min;
 }
 
-function pluralizeRecords(n){
+function pluralize(n){
     var p;
     p = document.getElementById('pluralizeRecords');
     var str;
     if (n % 10 == 1){str = 'В результате выполнения запроса была найдена '+ n + ' запись';}
     else if ((n >= 2 && n <= 4) || (n%10 >= 2 && n%10 <=4 && n > 20)){str = 'В результате выполнения запроса было найдено '+ n + ' записи';}
-    else {str = 'В результате выполнения запроса были найдены '+ n + ' записей';}
+    else {str = 'В результате выполнения запроса было найдено '+ n + ' записей';}
 
     p.innerHTML = str;
 }
 
-function fibb(n){
+function fibb(n){ //вернёт n-ое число из последовательности Фибоначчи
     var p;
     p = document.getElementById('fibb');
     let res;
