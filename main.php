@@ -44,13 +44,13 @@ $today = date('d.m.Y в H-i:s'); //дата, время
         <section class="fun">
             <h1>Плюрализация</h1>
                 <p id="pluralizeRecords">Сколько записей было найдено? </p>
-                    <button onclick="pluralize(5)">Посчитать</button> 
+                    <button onclick="pluralize(1)">Посчитать</button> 
         </section>  
         
         <section class="fun">
             <h1>Числа Фибоначчи</h1>
                 <p id="fibb">6-ое число Фибоначчи - это </p>
-                    <button onclick="fibb(6)">Посчитать</button>
+                    <button onclick="fibb(52)">Посчитать</button>
         </section>  
     </div>
     

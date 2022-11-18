@@ -15,11 +15,11 @@ function pow(x, n){ //возвращает x в степени n
 function nod(a, b) {//наибольший общий делитель двух неотрицательных чисел  a и  b 
     var p;
     p = document.getElementById('nod');
-    if ((typeof a !== 'number') || (typeof b !== 'number'))
+    if ((typeof a !== 'number') || (typeof b !== 'number')) //проверка является ли а и b числом а не чем-то другим
         return false;
-    a = Math.abs(a);
+    a = Math.abs(a); //модуль числа
     b = Math.abs(b);
-    while(b) {
+    while(b) { //цикл пока не будет 0 в остатке от деления
         var t = b;
         b = a % b;
         a = t;
@@ -30,12 +30,12 @@ function nod(a, b) {//наибольший общий делитель двух 
 function minDigit(x){ //возвращает наименьшую цифру целого неотрицательного числа x 
     var p;
     p = document.getElementById('minDigit');
-    min = x % 10;
+    min = x % 10; //остаток от деления
     k = x.toString().length;
-    for (let i = 0; i < k; i++){
+    for (let i = 0; i < k; i++){ //Число в строку, далее считает длину строки(сколько в числе цифр)
         num = x % 10;
         if (num < min){min = num;}
-        x = Math.floor(x/10);
+        x = Math.floor(x/10); //округление вниз
     }
     p.innerHTML += min;
 }
